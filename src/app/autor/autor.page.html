@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="dark" slot="start" routerLink="/home"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
+    <ion-title>Autor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+     <ion-card-title>Información</ion-card-title>
+     <ion-card-content>
+       Aplicación desarrollada por Jesus Sanchez Cabrera. A continuación
+       puede consultar mas informacion sobre el autor.
+     </ion-card-content>
+     <ion-list>
+      <ion-button color="dark" expand="block" routerLink="/curriculum" routerDirection="root">Curriculum vítae</ion-button>
+      
+        <ion-item>
+          <ion-item-header>
+            <ion-label>
+              Nombre:
+              <p>{{autor.name}}</p>
+            </ion-label>
+          </ion-item-header>
+        </ion-item> 
+      
+      <ion-item>
+        <ion-item-header>
+          <ion-label>
+            Correo:
+            <ion-router-link href="#" class="underline">{{autor.email}}</ion-router-link>
+          </ion-label>
+        </ion-item-header>
+      </ion-item>
+
+       <ion-item>
+        <ion-item-header>
+          <ion-label>
+            Twiter:
+            <ion-router-link href="https://twitter.com/?lang=es" class="underline">{{autor.twiter}}</ion-router-link>
+          </ion-label>
+        </ion-item-header>
+      </ion-item>
+
+       <ion-item>
+        <ion-item-header>
+          <ion-label>
+            Telefono:
+            <ion-router-link href="#" class="underline">{{autor.phone}}</ion-router-link>
+          </ion-label>
+        </ion-item-header>
+      </ion-item>
+
+     </ion-list>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

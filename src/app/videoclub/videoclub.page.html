@@ -1,0 +1,124 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button color="dark" slot="end" *ngIf="modoLista == true" (click)="cambiarVista(false)">
+      <ion-icon slot="icon-only" name="apps-sharp"></ion-icon>
+    </ion-button>
+    <ion-button color="dark" slot="start" routerLink="/home"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
+    <ion-title>Videoclub</ion-title>
+    <ion-button color="dark" slot="end" *ngIf="modoLista == false" (click)="cambiarVista(true)">
+      <ion-icon slot="icon-only" name="reorder-four-sharp"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div >
+  <ion-list *ngIf="modoLista == true; else modoGrid, listaPeliculas">
+    <ion-item button *ngFor="let pelicula of listaPeliculas; index as id" (click)="verPaginaDetalle(1)" mode="ios" detail>
+      <ion-thumbnail slot="start">
+        <img src="assets/img/s1.jpg">
+      </ion-thumbnail>
+      <ion-item-header>
+        <ion-label>
+        <h5>Sherk</h5>
+        <p>Director: Andrew Adamson</p>
+        <p>Año: 2001</p>
+        </ion-label>
+      </ion-item-header>
+    </ion-item>
+
+    <ion-item button (click)="verPaginaDetalle(2)" mode="ios">
+      <ion-thumbnail slot="start">
+        <img src="assets/img/s2.jpg">
+      </ion-thumbnail>
+      <ion-item-header>
+        <ion-label>
+          <h5>Sherk 2</h5>
+        <p>Director: Andrew Adamson</p>
+        <p>Año: 2004</p>
+        </ion-label>
+      </ion-item-header>
+    </ion-item>
+
+    <ion-item button (click)="verPaginaDetalle(3)" mode="ios">
+      <ion-thumbnail slot="start">
+        <img src="assets/img/s3.jpg">
+      </ion-thumbnail>
+      <ion-item-header>
+        <ion-label>
+        <h5>Sherk 3</h5>
+        <p>Director: Chris Miller</p>
+        <p>Año: 2007</p>
+        </ion-label>
+      </ion-item-header>
+    </ion-item>
+
+    <ion-item button (click)="verPaginaDetalle(4)" mode="ios">
+      <ion-thumbnail slot="start">
+        <img src="assets/img/s4.png">
+      </ion-thumbnail>
+      <ion-item-header>
+        <ion-label>
+        <h5>Sherk 4</h5>
+        <p>Director: Mike Mitchell</p>
+        <p>Año: 2010</p>
+        </ion-label>
+      </ion-item-header>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #modoGrid>
+    <ion-grid>
+      <ion-row>
+       
+        <ion-col size='6'>
+          <ion-item button (click)="verPaginaDetalle(1)">
+            
+            <ion-label>
+            <img src="assets/img/s1.jpg">
+            <h5>Sherk</h5>
+            <p>Director: Andrew Adamson</p>
+            <p>Año: 2001</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        
+          <ion-col size='6'>
+            <ion-item button (click)="verPaginaDetalle(2)">
+            <ion-label>
+            <img src="assets/img/s2.jpg">
+            <h5>Sherk 2</h5>
+            <p>Director: Andrew Adamson</p>
+            <p>Año: 2004</p>
+            </ion-label>
+          </ion-item>
+          </ion-col>
+          
+          <ion-col size='6'>
+            <ion-item button (click)="verPaginaDetalle(3)">
+            <ion-label>
+            <img src="assets/img/s3.jpg">
+            <h5>Sherk 3</h5>
+            <p>Director: Chris Miller</p>
+            <p>Año: 2007</p>
+            </ion-label>
+          </ion-item>
+          </ion-col>
+        
+          <ion-col size='6'>
+            <ion-item button (click)="verPaginaDetalle(4)">
+            <ion-label>
+            <img src="assets/img/s4.png">
+            <h5>Sherk 4</h5>
+            <p>Director: Mike Mitchell</p>
+            <p>Año: 2010</p>
+            </ion-label>
+          </ion-item>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+</div>
+
+</ion-content>

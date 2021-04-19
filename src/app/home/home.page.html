@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+     <p>Bienvenido a</p>
+     <ion-card-title>iVideoclub!</ion-card-title>
+     <ion-card-content>
+       iVideoclub es una aplicacion desarrollada con Ionic.
+       Para acceder a la gestion del Videoclub, pulsa el siguiente boton:
+     </ion-card-content>
+    </ion-card-header>
+    
+    <ion-button expand="block" color="dark" routerLink="/videoclub" routerDirection="forward" >
+      <ion-icon slot="start" name="videocam"></ion-icon>
+      Acceso a iVideoclub
+    
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+     <ion-card-title>Información sobre el autor</ion-card-title>
+     <ion-card-content>
+       Aplicación desarrollada por Jesus Sanchez Cabrera.
+     </ion-card-content>
+    </ion-card-header>
+    <ion-button expand="block" color="dark" routerLink="/autor" ><ion-icon slot="start" name="person"></ion-icon>Consultar informacion</ion-button>
+  </ion-card>
+
+ 
+</ion-content>
